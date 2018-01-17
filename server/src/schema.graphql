@@ -1,0 +1,29 @@
+# import Post from "./generated/prisma.graphql"
+
+type Query {
+  feed: [Post!]!
+  drafts: [Post!]!
+  post(id: ID!): Post
+  me: User
+}
+
+type Mutation {
+  createDraft(title: String!, text: String): Post
+  deletePost(id: ID!): Post
+  publish(id: ID!): Post
+  signup(email: String!, password: String!): AuthPayload!
+  login(email: String!, password: String!): AuthPayload!
+}
+
+type AuthPayload {
+  token: String!
+  user: User!
+}
+
+# The `User` type is a reduced version ("mask") of the `User` type from the data model (and database schema).
+# It does not expose the `createdAt`, `updatedAt` and `password` fields.
+type User {
+  id: ID!
+  email: String!
+  name: String!
+}
