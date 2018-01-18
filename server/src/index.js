@@ -6,8 +6,6 @@ const { me, signup, login, AuthPayload } = require('./auth')
 const resolvers = {
   Query: {
     me,
-  },
-  Query: {
     feed(parent, args, ctx, info) {
       return ctx.db.query.posts({ where: { isPublished: true } }, info)
     },
@@ -40,8 +38,8 @@ const resolvers = {
         info,
       )
     },
-  },
-}
+  }
+
 
 const server = new GraphQLServer({
   typeDefs: './src/schema.graphql',
