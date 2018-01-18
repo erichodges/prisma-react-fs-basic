@@ -13,7 +13,7 @@ class DraftsPage extends React.Component {
   render() {
     if (this.props.draftsQuery.loading) {
       return (
-        <div className="flex w-100 h-100 items-center justify-center pt7">
+        <div className='flex w-100 h-100 items-center justify-center pt7'>
           <div>Loading (from {process.env.REACT_APP_GRAPHQL_ENDPOINT})</div>
         </div>
       )
@@ -21,9 +21,10 @@ class DraftsPage extends React.Component {
 
     return (
       <React.Fragment>
-        <div className="flex justify-between items-center">
+        <div className='flex justify-between items-center'>
           <h1>Drafts</h1>
         </div>
+        {this.props.children}
         {this.props.draftsQuery.drafts &&
           this.props.draftsQuery.drafts.map(draft => (
             <Post
@@ -33,7 +34,7 @@ class DraftsPage extends React.Component {
               isDraft={!draft.isPublished}
             />
           ))}
-        {this.props.children}
+
       </React.Fragment>
     )
   }
