@@ -19,8 +19,8 @@ class DetailPage extends React.Component {
 
     return (
       <React.Fragment>
-        <h2 className="f3 black-80 fw4 lh-solid">{post.text}</h2>
-        <p className="black-80 fw3">{post.title}</p>
+        <h2 className='f3 black-80 fw4 lh-solid'>{post.text}</h2>
+        <p className='black-80 fw3'>{post.title}</p>
         {action}
       </React.Fragment>
     )
@@ -31,13 +31,13 @@ class DetailPage extends React.Component {
       return (
         <React.Fragment>
           <a
-            className="f6 dim br1 ba ph3 pv2 mb2 dib black pointer"
+            className='f6 dim br1 ba ph3 pv2 mb2 dib black pointer'
             onClick={() => this.publishDraft(id)}
           >
             Publish
           </a>{' '}
           <a
-            className="f6 dim br1 ba ph3 pv2 mb2 dib black pointer"
+            className='f6 dim br1 ba ph3 pv2 mb2 dib black pointer'
             onClick={() => this.deletePost(id)}
           >
             Delete
@@ -47,7 +47,7 @@ class DetailPage extends React.Component {
     }
     return (
       <a
-        className="f6 dim br1 ba ph3 pv2 mb2 dib black pointer"
+        className='f6 dim br1 ba ph3 pv2 mb2 dib black pointer'
         onClick={() => this.deletePost(id)}
       >
         Delete
